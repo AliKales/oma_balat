@@ -1,4 +1,15 @@
+import Image from "next/image";
 import Link from "next/link";
+
+const gallery = [
+  { src: "/photos/1.jpg", rotate: "-2deg", tag: "mis kokulu ☕" },
+  { src: "/photos/2.jpg", rotate: "1.5deg", tag: "ev yapımı 🍰" },
+  { src: "/photos/3.jpg", rotate: "-1deg", tag: "balat günleri 🌈" },
+  { src: "/photos/4.jpg", rotate: "2deg", tag: "köşemiz 💛" },
+  { src: "/photos/5.jpg", rotate: "-1.5deg", tag: "tatlı mola 🧁" },
+  { src: "/photos/6.jpg", rotate: "1deg", tag: "atölye keyfi 🎨" },
+  { src: "/photos/7.webp", rotate: "-2deg", tag: "dost meclisi 👯" },
+];
 
 const workshops = [
   {
@@ -162,6 +173,53 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* GALLERY */}
+      <section id="galeri" className="max-w-6xl mx-auto px-5 py-16 md:py-24">
+        <div className="flex items-end justify-between flex-wrap gap-4">
+          <div>
+            <span className="inline-block bg-pink-200 sticker-sm px-3 py-1 rounded-full text-xs font-black uppercase">
+              Galeri 📷
+            </span>
+            <h2 className="mt-3 text-4xl md:text-5xl font-black">
+              Oma&apos;dan karelerimiz.
+            </h2>
+          </div>
+          <p className="max-w-md text-[var(--coffee)]/80">
+            Kahve kokulu sabahlar, rengarenk tabaklar, gülen yüzler… İşte bizim
+            küçük dünyamız 💛
+          </p>
+        </div>
+
+        <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-5">
+          {gallery.map((g, i) => (
+            <div
+              key={g.src}
+              className={`sticker bg-white rounded-3xl overflow-hidden transition ${
+                i === 0 ? "md:row-span-2 md:col-span-2" : ""
+              }`}
+              style={{ rotate: g.rotate }}
+            >
+              <div
+                className={`relative w-full ${
+                  i === 0 ? "aspect-square md:aspect-[4/3]" : "aspect-square"
+                }`}
+              >
+                <Image
+                  src={g.src}
+                  alt={g.tag}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 50vw"
+                  className="object-cover"
+                />
+                <span className="absolute bottom-2 left-2 bg-[var(--coffee)] text-[var(--primary)] px-3 py-1 rounded-full text-xs font-black">
+                  {g.tag}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
