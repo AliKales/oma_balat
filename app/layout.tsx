@@ -122,7 +122,7 @@ export default function RootLayout({
                 rel="noreferrer"
                 className="text-sm underline hover:text-[var(--primary)]"
               >
-                Balat, İstanbul — Haritada Aç 📍
+                Balat, Sıhhiye Cd No: 40/B, 16225 Ni̇lüfer/Bursa — Haritada Aç 📍
               </a>
             </div>
           </div>

@@ -197,15 +197,11 @@ export default function Home() {
           {gallery.map((g, i) => (
             <div
               key={g.src}
-              className={`sticker bg-white rounded-3xl overflow-hidden transition ${
-                i === 0 ? "md:row-span-2 md:col-span-2" : ""
-              }`}
+              className={`sticker bg-white rounded-3xl overflow-hidden transition`}
               style={{ rotate: g.rotate }}
             >
               <div
-                className={`relative w-full ${
-                  i === 0 ? "aspect-square md:aspect-[4/3]" : "aspect-square"
-                }`}
+                className={`relative w-full aspect-square`}
               >
                 <Image
                   src={g.src}
@@ -268,7 +264,7 @@ export default function Home() {
           <div className="sticker rounded-3xl overflow-hidden bg-white">
             <iframe
               title="Oma Balat Harita"
-              src="https://www.google.com/maps?q=Balat+Istanbul&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3044.807542371448!2d28.938364499999995!3d40.2578083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca13a0f71eb5c1%3A0x6ad3728cbb395ea1!2sOMA%20at%C3%B6lye%20cafe!5e0!3m2!1sen!2str!4v1776850281618!5m2!1sen!2str"
               width="100%"
               height="420"
               loading="lazy"
