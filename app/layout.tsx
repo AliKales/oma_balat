@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Fredoka, Geist_Mono } from "next/font/google";
-import Image from "next/image";
-import Link from "next/link";
+import Nav from "./Nav";
 import "./globals.css";
 
 const fredoka = Fredoka({
@@ -32,65 +31,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--coffee)]">
         <header className="sticky top-0 z-50 bg-[var(--primary)] border-b-[3px] border-[var(--coffee)]">
-          <nav className="max-w-6xl mx-auto flex items-center justify-between px-5 py-3">
-            <Link href="/" className="flex items-center gap-2 group">
-              <span className="relative inline-block h-10 w-10 sm:h-12 sm:w-12 rounded-full overflow-hidden border-[2px] border-[var(--coffee)] animate-wiggle">
-                <Image
-                  src="/logo_oma.jpg"
-                  alt="Oma Balat logo"
-                  fill
-                  sizes="48px"
-                  className="object-cover"
-                  priority
-                />
-              </span>
-              <span className="font-black text-2xl tracking-tight group-hover:-rotate-2 transition">
-                Oma Balat
-              </span>
-            </Link>
-            <ul className="flex gap-1 sm:gap-3 items-center font-bold text-sm sm:text-base">
-              <li>
-                <Link
-                  href="/"
-                  className="px-3 py-2 rounded-full hover:bg-[var(--coffee)] hover:text-[var(--primary)] transition"
-                >
-                  Ana Sayfa
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/menu"
-                  className="px-3 py-2 rounded-full hover:bg-[var(--coffee)] hover:text-[var(--primary)] transition"
-                >
-                  Menü
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/#atolye"
-                  className="px-3 py-2 rounded-full hover:bg-[var(--coffee)] hover:text-[var(--primary)] transition"
-                >
-                  Atölyeler
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/#galeri"
-                  className="px-3 py-2 rounded-full hover:bg-[var(--coffee)] hover:text-[var(--primary)] transition"
-                >
-                  Galeri
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/#iletisim"
-                  className="px-3 py-2 rounded-full hover:bg-[var(--coffee)] hover:text-[var(--primary)] transition"
-                >
-                  İletişim
-                </Link>
-              </li>
-            </ul>
-          </nav>
+          <Nav />
         </header>
         <main className="flex-1">{children}</main>
         <footer className="bg-[var(--coffee)] text-[var(--cream)] mt-16">
