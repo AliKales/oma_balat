@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fredoka, Geist_Mono } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
 
@@ -33,7 +34,16 @@ export default function RootLayout({
         <header className="sticky top-0 z-50 bg-[var(--primary)] border-b-[3px] border-[var(--coffee)]">
           <nav className="max-w-6xl mx-auto flex items-center justify-between px-5 py-3">
             <Link href="/" className="flex items-center gap-2 group">
-              <span className="text-3xl animate-wiggle inline-block">☕</span>
+              <span className="relative inline-block h-10 w-10 sm:h-12 sm:w-12 rounded-full overflow-hidden border-[2px] border-[var(--coffee)] animate-wiggle">
+                <Image
+                  src="/logo_oma.jpg"
+                  alt="Oma Balat logo"
+                  fill
+                  sizes="48px"
+                  className="object-cover"
+                  priority
+                />
+              </span>
               <span className="font-black text-2xl tracking-tight group-hover:-rotate-2 transition">
                 Oma Balat
               </span>
@@ -61,6 +71,14 @@ export default function RootLayout({
                   className="px-3 py-2 rounded-full hover:bg-[var(--coffee)] hover:text-[var(--primary)] transition"
                 >
                   Atölyeler
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#galeri"
+                  className="px-3 py-2 rounded-full hover:bg-[var(--coffee)] hover:text-[var(--primary)] transition"
+                >
+                  Galeri
                 </Link>
               </li>
               <li>
